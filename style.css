@@ -154,3 +154,29 @@ h2 span { display: inline-flex; align-items: center; justify-content: center; wi
   .ema { padding: 50px 22px 30px; }
   .stamp { width: 58px; height: 58px; font-size: 13px; right: 10px; bottom: auto; top: 58px; }
 }
+
+/* 老板出气区 */
+.boss-title { margin-top: clamp(56px, 8vw, 90px); }
+.arena { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(16px, 2.4vw, 28px); max-width: 860px; margin: 0 auto; align-items: start; }
+.score { margin: -6px 0 14px; font: 400 17px var(--round); letter-spacing: .05em; color: var(--soft); }
+.score b { font: 700 24px var(--sans); color: var(--red); font-variant-numeric: tabular-nums; }
+.game-msg { margin: 14px 0; min-height: 3.2em; font: 400 17px/1.6 var(--round); }
+.holes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; max-width: 330px; margin: 0 auto; touch-action: manipulation; }
+.hole { position: relative; aspect-ratio: 1; border-radius: 18px; background: linear-gradient(#e7efd9 62%, #7a5a3c 62%); border: 2px solid var(--navy); overflow: hidden; }
+.hole::after { content: ""; position: absolute; left: 8%; right: 8%; bottom: 16%; height: 30%; border-radius: 50%; background: #4a3626; }
+.mole { position: absolute; z-index: 1; left: 4%; right: 4%; bottom: 6%; padding: 0; border: 0; background: none; cursor: pointer; transform: translateY(125%); transition: transform .16s ease-out; -webkit-tap-highlight-color: transparent; }
+.mole.up { transform: translateY(14%); }
+.mole svg { display: block; width: 100%; pointer-events: none; }
+.say { position: absolute; z-index: 2; left: 3px; right: 3px; top: 3px; padding: 1px 2px; border-radius: 8px; background: #fff; border: 1.5px solid var(--navy); font: 400 12px/1.5 var(--round); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; opacity: 0; transition: opacity .15s; pointer-events: none; }
+.hole.talk .say { opacity: 1; }
+.bag-zone { height: 290px; display: flex; justify-content: center; overflow: hidden; touch-action: manipulation; }
+.bag { --swing: 0deg; position: relative; width: 170px; padding-top: 40px; transform-origin: 50% 0; cursor: pointer; user-select: none; -webkit-user-select: none; -webkit-tap-highlight-color: transparent; }
+.bag.hit { animation: swing .45s ease-out; }
+@keyframes swing { 25% { transform: rotate(var(--swing)); } 60% { transform: rotate(calc(var(--swing) * -.35)); } }
+.chain { position: absolute; left: 50%; top: 0; width: 6px; height: 44px; margin-left: -3px; background: repeating-linear-gradient(var(--navy) 0 6px, #9aa5c2 6px 12px); }
+.bag-body { height: 240px; padding: 46px 18px 0; border-radius: 60px 60px 70px 70px; background: linear-gradient(90deg, #c94430, var(--red) 40%, #f07a62); border: 3px solid var(--navy); box-shadow: inset 0 -14px 0 rgba(0, 0, 0, .12); }
+.bag-body svg { display: block; width: 100%; pointer-events: none; }
+.shout { position: absolute; z-index: 3; transform: translate(-50%, -50%); font: 400 22px var(--round); color: var(--navy); text-shadow: 2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff; white-space: nowrap; pointer-events: none; animation: fly .7s ease-out forwards; }
+@keyframes fly { to { transform: translate(-50%, -190%) scale(1.25); opacity: 0; } }
+.btn:disabled { opacity: .45; cursor: default; transform: none; box-shadow: 0 4px 0 var(--navy); }
+@media (max-width: 860px) { .arena { grid-template-columns: 1fr; max-width: 420px; } }

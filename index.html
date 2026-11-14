@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="style.css?v=1">
+<link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 <div class="petals" id="petals" aria-hidden="true"></div>
@@ -46,7 +46,8 @@
     <dl>
       <dt>名字</dt><dd>蓉儿</dd>
       <dt>身份</dt><dd>一名认真上班的打工人</dd>
-      <dt>电量</dt><dd>周一 20%　周五 100%</dd>
+      <dt>电量</dt><dd>周一 20%　周六晚上 100%</dd>
+      <dt>休假</dt><dd>一周只休星期天（所以很珍贵）</dd>
       <dt>喜欢</dt><dd>好吃的、可爱的、不用早起的日子</dd>
       <dt>害怕</dt><dd>闹钟、加班、“在吗”</dd>
       <dt>心愿</dt><dd>找一个可以随便聊聊的搭子</dd>
@@ -64,7 +65,7 @@
     <figure class="card reveal" style="--r:2.5deg"><i class="tape"></i><img src="img/beard.jpg" alt="头顶两撮炸毛、画着大胡子的搞怪自拍" loading="lazy"><figcaption><b>开会的时候</b>嗯嗯好的，没问题。</figcaption></figure>
     <figure class="card reveal" style="--r:-2deg"><i class="tape"></i><img src="img/glasses.jpg" alt="戴红框眼镜、画着胡子、旁边冒着 zzz 的搞怪自拍" loading="lazy"><figcaption><b>下午三点</b>灵魂已下班，身体还在。</figcaption></figure>
     <figure class="card reveal" style="--r:3deg"><i class="tape"></i><img src="img/fresh.jpg" alt="蓉儿清爽的自拍" loading="lazy"><figcaption><b>下班以后</b>看，这才是本人。</figcaption></figure>
-    <figure class="card reveal" style="--r:-2.5deg"><i class="tape"></i><video src="img/clip.mp4" muted loop playsinline autoplay preload="metadata" poster="img/sweet.jpg" aria-label="蓉儿眨眼睛的短片"></video><figcaption><b>周五晚上</b>电量 100%，谁找我聊天？</figcaption></figure>
+    <figure class="card reveal" style="--r:-2.5deg"><i class="tape"></i><video src="img/clip.mp4" muted loop playsinline autoplay preload="metadata" poster="img/sweet.jpg" aria-label="蓉儿眨眼睛的短片"></video><figcaption><b>周六晚上</b>明天休息！谁找我聊天？</figcaption></figure>
   </div>
 </section>
 
@@ -120,6 +121,25 @@
       <button class="btn" id="pop-reset" type="button">换一张新的</button>
     </article>
   </div>
+
+  <h2 class="boss-title" id="boss"><span>伍</span>老板出气区</h2>
+  <p class="sub">纯属卡通，如有雷同，那就多打两下。</p>
+  <div class="arena">
+    <article class="toy reveal" id="whack">
+      <h3>揍老板</h3>
+      <p class="score">得分 <b id="whack-score">0</b>　剩 <b id="whack-time">30</b> 秒</p>
+      <div class="holes" id="holes"></div>
+      <p class="game-msg" id="whack-msg" aria-live="polite">老板冒头就揍，别打到同事小猫！</p>
+      <button class="btn red" id="whack-go" type="button">开始揍</button>
+    </article>
+    <article class="toy reveal" id="sandbag">
+      <h3>老板沙包</h3>
+      <p class="score">拳数 <b id="bag-hits">0</b>　剩 <b id="bag-time">10.0</b> 秒</p>
+      <div class="bag-zone"><div class="bag" id="bag" role="button" aria-label="沙包，点它出拳"><i class="chain"></i><div class="bag-body"><div id="bag-face"></div></div></div></div>
+      <p class="game-msg" id="bag-msg" aria-live="polite">十秒钟，看你能打几拳。</p>
+      <button class="btn red" id="bag-go" type="button">开始打</button>
+    </article>
+  </div>
 </section>
 
 <footer class="foot">
@@ -141,6 +161,7 @@ const CONTACT = {
   xhs:    '',   // 小红书
 };
 </script>
-<script src="main.js?v=1" defer></script>
+<script src="main.js?v=2" defer></script>
+<script src="games.js?v=2" defer></script>
 </body>
 </html>

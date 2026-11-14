@@ -87,7 +87,7 @@ function tick() {
   const start = new Date(now); start.setHours(9, 0, 0, 0);
   const off = new Date(now); off.setHours(h, m, 0, 0);
   const clock = $('off-clock'), msg = $('off-msg'), bar = $('off-bar');
-  if (day === 0 || day === 6) { clock.textContent = '休息中'; bar.style.width = '100%'; msg.textContent = '今天是周末！躺着就是正事。'; }
+  if (day === 0) { clock.textContent = '休息中'; bar.style.width = '100%'; msg.textContent = '今天是星期天！一周就这一天，躺着就是正事。'; }
   else if (now >= off) { clock.textContent = '下班啦'; bar.style.width = '100%'; msg.textContent = '还愣着干嘛，快跑！今天辛苦了。'; }
   else {
     const left = Math.floor((off - now) / 1000);
@@ -96,8 +96,8 @@ function tick() {
     bar.style.width = (p * 100).toFixed(1) + '%';
     msg.textContent = now < start ? '还没到上班时间，再赖一下床。' : p < .3 ? '刚开始，深呼吸，先喝口水。' : p < .6 ? '已经过了一小半，你可以的。' : p < .85 ? '过大半了！想想晚上吃什么。' : '快了快了，开始收拾桌面吧。';
   }
-  const toSat = day === 0 || day === 6 ? 0 : 6 - day;
-  $('off-weekend').textContent = toSat === 0 ? '现在就是周末 ✿' : toSat === 1 ? '明天就是周末啦 ✿' : `离周末还有 ${toSat} 天`;
+  const toSun = day === 0 ? 0 : 7 - day;   // 她一周只休星期天
+  $('off-weekend').textContent = toSun === 0 ? '今天就是休息日 ✿' : toSun === 1 ? '明天就休息啦，撑住 ✿' : `离星期天还有 ${toSun} 天`;
 }
 tick(); setInterval(tick, 1000);
 
