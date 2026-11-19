@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
 <div class="petals" id="petals" aria-hidden="true"></div>
@@ -159,6 +159,27 @@
       <p class="game-msg" id="memo-msg" aria-live="polite">翻开两张一样的就配对成功。</p>
       <button class="btn" id="memo-reset" type="button">洗牌重来</button>
     </article>
+    <article class="toy reveal" id="rps">
+      <h3>猜拳亲亲</h3>
+      <p class="score">你 <b id="rps-me-score"></b>　他 <b id="rps-him-score"></b></p>
+      <div class="rps-stage">
+        <div class="rps-side"><div class="rps-face" id="rps-face"></div><span class="rps-hand" id="rps-him">？</span></div>
+        <p class="rps-say" id="rps-say" aria-live="polite"></p>
+        <div class="rps-side mine"><span class="rps-hand" id="rps-me">？</span><b>你</b></div>
+      </div>
+      <div class="rps-btns" id="rps-btns"><button type="button" data-h="rock"><i>✊</i>石头</button><button type="button" data-h="scissors"><i>✌️</i>剪刀</button><button type="button" data-h="paper"><i>🖐️</i>布</button></div>
+      <p class="game-msg" id="rps-msg" aria-live="polite"></p>
+      <button class="btn" id="rps-reset" type="button" hidden>再猜一局</button>
+    </article>
+    <article class="toy reveal" id="talk">
+      <h3>陪你聊聊</h3>
+      <p class="score">心情值 <b id="talk-mood">0</b>%</p>
+      <div class="bar"><i id="talk-bar"></i></div>
+      <div class="talk-log" id="talk-log"><p class="talk-empty">他有话想问你。点下面的按钮开始。</p></div>
+      <div class="talk-opts" id="talk-opts"></div>
+      <p class="game-msg" id="talk-msg" aria-live="polite">他问一句，你选一句回，他会回你。</p>
+      <button class="btn red" id="talk-go" type="button">开始聊天</button>
+    </article>
   </div>
 </section>
 
@@ -181,8 +202,9 @@ const CONTACT = {
   xhs:    '',   // 小红书
 };
 </script>
-<script src="main.js?v=4" defer></script>
-<script src="games.js?v=4" defer></script>
-<script src="love.js?v=4" defer></script>
+<script src="main.js?v=5" defer></script>
+<script src="games.js?v=5" defer></script>
+<script src="love.js?v=5" defer></script>
+<script src="duo.js?v=5" defer></script>
 </body>
 </html>

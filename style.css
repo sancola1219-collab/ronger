@@ -202,3 +202,31 @@ h2 span { display: inline-flex; align-items: center; justify-content: center; wi
 .mcard.open .mback { transform: rotateY(180deg); }
 .mcard.open .mfront { transform: rotateY(360deg); }
 .mcard.ok .mfront { background: #e3efd2; animation: pop .4s ease; }
+
+/* 互动小游戏 */
+[hidden] { display: none !important; }
+.score b { letter-spacing: .05em; }
+.rps-stage { display: grid; grid-template-columns: 1fr; gap: 8px; padding: 14px; border: 2px solid var(--navy); border-radius: 18px; background: var(--pink2); }
+.rps-side { display: flex; align-items: center; justify-content: center; gap: 14px; }
+.rps-side.mine b { font: 400 22px var(--round); }
+.rps-face { width: 84px; }
+.rps-face svg { display: block; width: 100%; }
+.rps-hand { width: 68px; height: 68px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #fff; border: 2px solid var(--navy); font-size: 34px; line-height: 1; }
+.rps-hand.shake { animation: rshake .35s linear infinite; }
+@keyframes rshake { 25% { transform: translateY(-8px); } 75% { transform: translateY(6px); } }
+.rps-say { margin: 0; padding: 6px 12px; min-height: 3.6em; display: flex; align-items: center; justify-content: center; border-radius: 14px; background: #fff; border: 2px dashed var(--pink); font: 400 17px/1.5 var(--round); }
+.rps-btns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
+.rps-btns button { padding: 8px 0 6px; border: 2px solid var(--navy); border-radius: 16px; background: #fff; color: var(--navy); cursor: pointer; font: 400 16px var(--round); box-shadow: 0 4px 0 var(--navy); transition: transform .12s, box-shadow .12s; -webkit-tap-highlight-color: transparent; }
+.rps-btns button:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--navy); }
+.rps-btns button:disabled { opacity: .45; cursor: default; }
+.rps-btns i { display: block; font-style: normal; font-size: 30px; line-height: 1.2; }
+.talk-log { height: 250px; margin-top: 14px; padding: 12px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; border: 2px solid var(--navy); border-radius: 18px; background: #fffdf8; text-align: left; }
+.talk-empty { margin: auto; color: var(--soft); text-align: center; }
+.bub { max-width: 82%; margin: 0; padding: 6px 14px; border-radius: 16px; font-size: 15.5px; line-height: 1.6; animation: pop .3s ease; }
+.bub.him { align-self: flex-start; background: var(--pink2); border-bottom-left-radius: 4px; }
+.bub.me { align-self: flex-end; background: var(--navy); color: #fff; border-bottom-right-radius: 4px; }
+.talk-opts { display: grid; gap: 8px; margin-top: 12px; min-height: 0; }
+.talk-opts button { padding: 7px 12px; border: 2px solid var(--navy); border-radius: 999px; background: #fff; color: var(--navy); cursor: pointer; font: 400 16px var(--round); -webkit-tap-highlight-color: transparent; }
+.talk-opts button:hover { background: var(--pink2); }
+#rps .score { white-space: nowrap; }
+#rps .score b { font-size: 17px; letter-spacing: 0; }
