@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 <div class="petals" id="petals" aria-hidden="true"></div>
@@ -141,23 +141,23 @@
     </article>
   </div>
 
-  <h2 class="boss-title" id="villain"><span>陆</span>小人退散</h2>
-  <p class="sub">专治背后使坏的人。小人是画出来的，打完扎完，心里舒服就好。</p>
+  <h2 class="boss-title" id="happy"><span>陆</span>开心一下</h2>
+  <p class="sub">气出完了，来点甜的。</p>
   <div class="arena">
-    <article class="toy reveal" id="slap">
-      <h3>打小人</h3>
-      <p class="score">已打 <b id="slap-n">0</b> 下</p>
-      <div class="v-zone" id="slap-zone" role="button" aria-label="纸小人，点它用木屐拍"><div class="v-doll" id="slap-doll"></div></div>
-      <div class="bar"><i id="slap-bar"></i></div>
-      <p class="game-msg" id="slap-msg" aria-live="polite">用木屐拍它！拍满 30 下就退散。</p>
-      <button class="btn" id="slap-reset" type="button">换一个小人</button>
+    <article class="toy reveal" id="kiss">
+      <h3>亲亲爱人</h3>
+      <p class="score">第 <b id="kiss-n">0</b> / 10 下　甜度 <b id="kiss-score">0</b></p>
+      <div class="lover-box"><div class="lover" id="lover"></div></div>
+      <div class="kiss-track" id="kiss-track" role="button" aria-label="嘴唇跑到中间的心形区时点一下"><i class="kiss-zone" id="kiss-zone-mark"></i><i class="kiss-heart"></i><i class="kiss-lips" id="kiss-lips"></i></div>
+      <p class="game-msg" id="kiss-msg" aria-live="polite">嘴唇会来回跑，跑到中间的粉红区再亲，越准越甜。</p>
+      <button class="btn red" id="kiss-go" type="button">开始亲亲</button>
     </article>
-    <article class="toy reveal" id="pin">
-      <h3>刺小人</h3>
-      <p class="score">已扎 <b id="pin-n">0</b> 针　还剩 <b id="pin-left">12</b> 根</p>
-      <div class="v-zone" id="pin-zone" role="button" aria-label="稻草小人，点它身上扎针"><div class="v-doll" id="pin-doll"></div><div id="pin-layer"></div></div>
-      <p class="game-msg" id="pin-msg" aria-live="polite">点稻草小人身上，想扎哪里扎哪里。</p>
-      <button class="btn" id="pin-reset" type="button">拔针重来</button>
+    <article class="toy reveal" id="memo">
+      <h3>和风翻翻乐</h3>
+      <p class="score">翻了 <b id="memo-flips">0</b> 次　配对 <b id="memo-done">0</b> / 8</p>
+      <div class="memo-grid" id="memo-grid"></div>
+      <p class="game-msg" id="memo-msg" aria-live="polite">翻开两张一样的就配对成功。</p>
+      <button class="btn" id="memo-reset" type="button">洗牌重来</button>
     </article>
   </div>
 </section>
@@ -181,8 +181,8 @@ const CONTACT = {
   xhs:    '',   // 小红书
 };
 </script>
-<script src="main.js?v=3" defer></script>
-<script src="games.js?v=3" defer></script>
-<script src="villain.js?v=3" defer></script>
+<script src="main.js?v=4" defer></script>
+<script src="games.js?v=4" defer></script>
+<script src="love.js?v=4" defer></script>
 </body>
 </html>
